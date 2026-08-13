@@ -1,5 +1,17 @@
 # Protein gene annotation of *Insectozyma corydali* genome
 
+## Overview
+
+Protein-coding genes were prediected in the *Insectozyma corydali* genome using Augustus v.3.2.3. Proteins from  *I. verbasci* were aligned to the *I. corydali* genome using miniprot v.0.12 with maximum intron size set to 5kbp. The resulting alignments were reformatted and used as hints for Augustus to show likely positions of exons and introns. 
+
+In the first iteration, Augustus was run with the *I. verbasci* parameters created as described in [Brejová et al., 2023](https://doi.org/10.1128/mra.00005-23). The predicted proteins were then aligned to the *I. verbasci* proteins using blat v.36x7 in the protein mode. Proteins from *I. corydali* with the number of matching amino acids greater than 70% of the length of both the *I. verbasci* and *I. corydali* proteins were considered supported and the corresponding genes were used for training Augustus parameters for *I. corydali*.
+
+This training process was repeated for two iterations, as the number of supported genes increased significantly after the first retraining. 
+
+The final gene set was obtained from the third iteration of Augustus. The predicted genes were filtered to remove five genes with in-frame stop codons and five genes predicted in mitochondrial DNA, as the Augustus model is not trained for mitochondrial genomes that use a different genetic code. Instead, the mitochondrial genes were obtained from Genbank sequence KC993198.
+
+This process was partially automated by the `annot` script from [assembly-scripts](https://github.com/fmfi-compbio/assembly-scripts) v.2. The specific commands used are listed below. Key files and folders are provided here.
+
 ## Files and folders
 
 ### Augustus parameters
@@ -48,7 +60,7 @@ This set was obtained from `au-3-p.gtf` after renaming, omitting genes from `omi
 
 * `genes1-prot.fa`: final set of proteins 
 * `genes1.gtf`: final set of genes 
-* `omit-genes1.list`: contains IDs of genes from `au-3-p.gtf` that were omitted. % genes because of in0frame stop codons and 5 genes encoded by mitochondrial DNA, as Augustus model is not trained for mitochondrial genomes. 
+* `omit-genes1.list`: contains IDs of genes from `au-3-p.gtf` that were omitted 
 
 ## Commands used
 
