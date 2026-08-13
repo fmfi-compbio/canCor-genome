@@ -52,7 +52,7 @@ for (idx, chr) in sizes.iterrows():
 def get_new_y(idx):
   return -2.35+get_y(idx)*0.75
 
-axes.text(2.1e6, -1.7, "C. verbasci", ha='left', va='bottom', style='italic')
+axes.text(2.1e6, -1.7, "I. verbasci", ha='left', va='bottom', style='italic')
 
 # legend
 for (idx, chr) in enumerate(names2):
