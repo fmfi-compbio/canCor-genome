@@ -1,0 +1,45 @@
+# Read in 2101 genbank sequences.
+Quantiles of the GC contents in the training set:
+0%	0.28
+5%	0.315	10%	0.322
+15%	0.327	20%	0.33
+25%	0.333	30%	0.335
+35%	0.338	40%	0.34
+45%	0.342	50%	0.344
+55%	0.346	60%	0.348
+65%	0.35	70%	0.352
+75%	0.355	80%	0.357
+85%	0.36	90%	0.364
+95%	0.371	100%	0.4
+HMM-training the parameters...
+i= 0 bc= (0.237, 0.263, 0.263, 0.237)
+ ** building model for exons *EXON*
+start codon frequencies: ATG(2101)
+# admissible start codons and their probabilities: ATG(1), CTG(0), TTG(0)
+ number of bases in the reading frames: 1012055 1014133 1014134
+--- frame = 0 ---    minPatSum = 233
+--- frame = 1 ---    minPatSum = 233
+--- frame = 2 ---    minPatSum = 233
+--- initial frame = 0 ---    minPatSum = 233
+--- initial frame = 1 ---    minPatSum = 233
+--- initial frame = 2 ---    minPatSum = 233
+--- internal exon terminal frame = 0 ---    minPatSum = 233
+--- internal exon terminal frame = 1 ---    minPatSum = 233
+--- internal exon terminal frame = 2 ---    minPatSum = 233
+single, initial, internal, terminal mean exon lengths :
+1098	172	290	611
+single exon : 1923
+initial exon 0 : 75
+initial exon 1 : 58
+initial exon 2 : 45
+internal exon 0 : 6
+internal exon 1 : 6
+internal exon 2 : 6
+terminal exon : 178
+Frequency of stop codons:
+tag:  614 (0.292)
+taa: 1097 (0.522)
+tga:  390 (0.186)
+end *EXON*
+Storing parameters to file...
+Writing exon model parameters [1] to file /projects6/yeast-2026/canCor/annot/au-3-train/config/species/canCor/canCor_exon_probs.pbl.
