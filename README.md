@@ -9,5 +9,5 @@ Folders:
 
 * [`data`](./data): assembly of the *Insectozyma corydali* genome and the related genome of *I. verbasci*
 * [`assembly`](./assembly): commands used to process the reads, assemble the genome and conduct BUSCO analysis
-* [`annotations`](./annotations): files used to produce gene annotations for *I. corydali*
+* [`annotation`](./annotation): files and commands used to produce gene annotations for *I. corydali*
 * [`chrompaint`](./chrompaint): files and the script used to produce the chromosome painting figure
