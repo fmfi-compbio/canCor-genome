@@ -49,3 +49,17 @@ FastTree SUPERMATRIX.phylip > tree.nwk
 tree <- read.tree("tree.nwk")
 ggtree(tree,, layout="rectangular", linewidth = 0.5) + geom_treescale(x=0, y=0, fontsize=2, linesize=0.5) + geom_tiplab(align = TRUE, offset = 0.02, fontface = "italic", family = "sans", size = 3.5) + geom_rootpoint(size = 2.5, color = 'black') + xlim_tree(2.5)
 ```
+
+
+## List of accession numbers of assemblies used in the tree
+
+* GCA_030582535.1 *Insectozyma bohioensis*
+* GCA_030557115.1 *Insectozyma chauliodis*
+* GCA_030565325.1 *Insectozyma coleopterorum*
+* GCA_987538045.1 *Insectozyma corydali*
+* GCA_030564645.1 *Insectozyma morakotiae*
+* GCA_030565145.1 *Insectozyma parachauliodis*
+* GCA_030569255.1 *Insectozyma sakaeoensis*
+* GCA_947670415.1 *Insectozyma verbasci*
+* GCA_030555925.1 *Insectozyma xiaguanensis*
+* GCF_000182765.1 *Lodderomyces parapsilosis*
