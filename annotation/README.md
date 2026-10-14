@@ -2,7 +2,7 @@
 
 ## Overview
 
-Protein-coding genes were prediected in the *Insectozyma corydali* genome using Augustus v.3.2.3. Proteins from  *I. verbasci* were aligned to the *I. corydali* genome using miniprot v.0.12 with maximum intron size set to 5kbp. The resulting alignments were reformatted and used as hints for Augustus to show likely positions of exons and introns. 
+Protein-coding genes were predicted in the *Insectozyma corydali* genome using Augustus v.3.2.3. Proteins from  *I. verbasci* were aligned to the *I. corydali* genome using miniprot v.0.12 with maximum intron size set to 5kbp. The resulting alignments were reformatted and used as hints for Augustus to show likely positions of exons and introns. 
 
 In the first iteration, Augustus was run with the *I. verbasci* parameters created as described in [Brejová et al., 2023](https://doi.org/10.1128/mra.00005-23). The predicted proteins were then aligned to the *I. verbasci* proteins using blat v.36x7 in the protein mode. Proteins from *I. corydali* with the number of matching amino acids greater than 70% of the length of both the *I. verbasci* and *I. corydali* proteins were considered supported and the corresponding genes were used for training Augustus parameters for *I. corydali*.
 
@@ -64,21 +64,35 @@ This set was obtained from `au-3-p.gtf` after renaming, omitting genes from `omi
 
 ## Commands used
 
+* These commands use the [`annot`](https://github.com/fmfi-compbio/assembly-scripts/blob/v2/annot) script from [assembly-scripts](https://github.com/fmfi-compbio/assembly-scripts) v.2 GitHub repository.
+* This script is a simple wrapper around a Snakemake pipeline [`annot.smk`](https://github.com/fmfi-compbio/assembly-scripts/blob/v2/annot.smk) provided in the same repository.
+* A [default config file](https://github.com/fmfi-compbio/assembly-scripts/blob/v2/annot.yaml) provided in the repository was used, except that genetic code table was changed to 12, as outlined in the commands below, whenever a translation of predicted proteins was performed.
+
 ```bash
 # prepare protein hints by miniprot alignment
 assembly-scripts/annot miniprot.hints.gff
+
 # run Augustus with protein hints and I. verbascii parameters
 assembly-scripts/annot au-1-p-prot.fa --config GENETIC_CODE=12
+
 # prepare training dataset with supported genes
+# (alignment of au-1-p-prot.fa to I. verbasci proteins,
+# selection of genes with a sufficiently strong similarity,
+# reformatting of the set to genbank format required by Augustus)
 assembly-scripts/annot au-1-p-supProt-single.train.gb 
+
 # run Augustus training
 assembly-scripts/annot au-2-train
+
 # run Augustus with protein hints and au-2-train parameters
 assembly-scripts/annot au-2-p-prot.fa --config GENETIC_CODE=12
+
 # prepare training dataset with supported genes
 assembly-scripts/annot au-2-p-supProt-single.train.gb 
+
 # run Augustus training
 assembly-scripts/annot au-3-train
+
 # run Augustus with protein hints and au-3-train parameters
 assembly-scripts/annot au-3-p-prot.fa --config GENETIC_CODE=12
 ```
