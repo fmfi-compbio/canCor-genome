@@ -57,7 +57,7 @@ REF1: Prjibelski, A., Antipov, D., Meleshko, D., Lapidus, A. and Korobeynikov, A
 
 REF2: Camacho C, Coulouris G, Avagyan V, Ma N, Papadopoulos J, Bealer K, Madden TL. BLAST+: architecture and applications. BMC Bioinformatics. 2009; 10:421. doi: [10.1186/1471-2105-10-421](https://doi.org/10.1186/1471-2105-10-421)
 
-REF3: Lang BF, Beck N, Prince S, Sarrasin M, Rioux P, Burger G. Mitochondrial genome annotation with MFannot: a critical analysis of gene identification and gene model prediction. Front Plant Sci. 2023;14:1222186. doi: [10.3389/fpls.2023](https://doi.org/10.3389/fpls.2023)
+REF3: Lang BF, Beck N, Prince S, Sarrasin M, Rioux P, Burger G. Mitochondrial genome annotation with MFannot: a critical analysis of gene identification and gene model prediction. Front Plant Sci. 2023;14:1222186. doi: [10.3389/fpls.2023.1222186](https://doi.org/10.3389/fpls.2023.1222186)
 
 
 ## BUSCO analysis
