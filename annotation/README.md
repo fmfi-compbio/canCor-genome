@@ -8,7 +8,7 @@ In the first iteration, Augustus was run with the *I. verbasci* parameters creat
 
 This training process was repeated for two iterations, as the number of supported genes increased significantly after the first retraining. 
 
-The final gene set was obtained from the third iteration of Augustus. The predicted genes were filtered to remove five genes with in-frame stop codons and five genes predicted in mitochondrial DNA, as the Augustus model is not trained for mitochondrial genomes that use a different genetic code. Instead, the mitochondrial genes were obtained from Genbank sequence KC993198.
+The final gene set was obtained from the third iteration of Augustus. The predicted genes were filtered to remove five genes with in-frame stop codons and five genes predicted in mitochondrial DNA, as the Augustus model is not trained for mitochondrial genomes that use a different genetic code. Instead, the mitochondrial genes were obtained from Genbank sequence KC993198 (see [mtDNA assembly and annotation](../assembly#mtdna-assembly-and-annotation)).
 
 This process was partially automated by the `annot` script from [assembly-scripts](https://github.com/fmfi-compbio/assembly-scripts) v.2. The specific commands used are listed below. Key files and folders are provided here.
 
