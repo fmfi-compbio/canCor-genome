@@ -48,10 +48,12 @@ pilon -Xmx32G --genome sample_hifiasm.pilon1 --frags sample_hifiasm.mapping2.sor
 
 Circular mtDNA monomer was obtained as follows: trimmed Illumina reads were assembled using SPAdes 4.2.0 (REF1) with `--isolate` option:
 ```
-spades.py --isolate -m 512 -t16 -1 reads_1.paired.fq.gz -2 reads_2.paired.fq.gz -o out_dir
+spades.py --isolate -m 512 -t16 -1 reads_1.paired.fastq.gz -2 reads_2.paired.fastq.gz -o out_dir
 ```
 
 A 46,466 bp long contig corresponding to mtDNA was identified by blastn (REF2) using the I. verbasci mtDNA (GB acc.no. [OK589855](https://www.ncbi.nlm.nih.gov/nuccore/OK589855)) as query. A 77-bp overlap was removed from the right end. The resulting contig was circularized and rotated to position 3787 to start with the gene nad2. Annotation was performed using MFannot (REF3).
+
+The hifiasm assembly produced from nanopore reads as shown above contained a contig of length 290,284bp with over 6 tandem copies of mtDNA, as well as multiple mtDNA fragments.
 
 REF1: Prjibelski, A., Antipov, D., Meleshko, D., Lapidus, A. and Korobeynikov, A., 2020. Using SPAdes de novo assembler. Current protocols in bioinformatics, 70(1), p.e102. doi: [10.1002/cpbi.102](https://doi.org/10.1002/cpbi.102)
 
